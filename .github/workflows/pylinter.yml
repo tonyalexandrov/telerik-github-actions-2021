@@ -1,0 +1,17 @@
+name: learn-github-actions2
+on:
+  push:
+    branches: [ first pipeline ]
+    paths: 
+    - 'factorial.py'
+    - 'lint_test.py'
+
+job:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test OS
+      - run: echo "This jobs was run on ${{ runner.os }} hosted on GitHub"
+      - name: test branch name
+      - run: 
+      uses: actions/checkout@v2
